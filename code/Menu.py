@@ -34,16 +34,11 @@ class Menu:
                     quit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_DOWN:
-                        if menu_option < len(MENU_OPTION) - 1:
-                            menu_option += 1
-                        else:
-                            menu_option = 0
-                    if event.key == pygame.K_UP:  # UP KEY
-                        if menu_option > 0:
-                            menu_option -= 1
-                        else:
-                            menu_option = len(MENU_OPTION) - 1
-                    if event.key == pygame.K_RETURN:  # ENTER
+                        menu_option = (menu_option + 1) % len(MENU_OPTION)
+                    elif event.key == pygame.K_UP:
+                        menu_option = (menu_option - 1) % len(MENU_OPTION)
+                    elif event.key == pygame.K_RETURN:
+                        pygame.mixer_music.stop()
                         return MENU_OPTION[menu_option]
 
 

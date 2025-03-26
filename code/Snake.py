@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from code.Entity import Entity
 
-from Entity import Entity
+
+#from Entity import Entity
 
 
 class Snake(Entity):
