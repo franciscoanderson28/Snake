@@ -20,3 +20,7 @@ GAME MENU
 GAME LEVEL 1
 
 ![Level1](https://github.com/franciscoanderson28/Snake/blob/master/asset/printlevel1.png)
+
+SCORE
+
+![Level1](https://github.com/franciscoanderson28/Snake/blob/master/asset/printscore.png)
