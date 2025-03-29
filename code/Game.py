@@ -21,10 +21,9 @@ class Game:
         self.level = Level()
 
         # Carrega os assets
-        self.fruit_image = pygame.image.load('asset/cherry.png').convert_alpha()
-        self.background_image = pygame.image.load('asset/Level1.png').convert()
-        self.background_image = pygame.transform.scale(self.background_image,
-                                                       (SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.level = Level()
+        self.fruit_image = self.level.get_fruit_image()
+        self.background_image = self.level.get_background_image()
         self.game_font = pygame.font.Font('asset/PoetsenOne-Regular.ttf', 25)
 
         self.SCREEN_UPDATE = pygame.USEREVENT
@@ -44,7 +43,7 @@ class Game:
                 self.reset_game()
                 self.game_loop()
             elif option == "SCORE":
-                score.show_score()
+                score.show()
             elif option == "EXIT":
                 pygame.quit()
                 sys.exit()
@@ -88,12 +87,11 @@ class Game:
         self.check_fail()
 
     def draw_elements(self):
-        self.fruit.draw(self.screen, self.fruit_image, CELL_SIZE)
+        self.fruit.draw(self.screen, self.level.get_fruit_image(), CELL_SIZE)
         self.snake.draw(self.screen, CELL_SIZE)
         self.level.draw_score(
             self.screen,
             (len(self.snake.body) - 3) * 10,
-            self.fruit_image,
             self.game_font
         )
 
@@ -102,7 +100,10 @@ class Game:
             self.fruit.randomize()
             self.snake.add_block()
             self.snake.play_food_sound()
-
+            if (len(self.snake.body) - 3) * 10 >= 50 and self.level.level_num == 1:
+                self.level.change_level(2)
+                self.fruit_image = self.level.get_fruit_image()
+                self.background_image = self.level.get_background_image()
         for block in self.snake.body[1:]:
             if block == self.fruit.pos:
                 self.fruit.randomize()
