@@ -31,12 +31,10 @@ class Snake:
     def draw(self, screen, cell_size):
         self.update_head_asset()
         self.update_tail_asset()
-
         for index, block in enumerate(self.body):
             x_pos = int(block.x * cell_size)
             y_pos = int(block.y * cell_size)
             block_rect = pygame.Rect(x_pos, y_pos, cell_size, cell_size)
-
             if index == 0:
                 screen.blit(self.head, block_rect)
             elif index == len(self.body) - 1:

@@ -13,14 +13,11 @@ class Level:
         pygame.mixer.music.load(f'asset/Level{self.level_num}.wav')
         pygame.mixer.music.set_volume(0.5)
         pygame.mixer.music.play(-1)
-
-        # Carrega imagem da fruta baseada no nível
-        self.fruit_image = pygame.image.load(f'asset/fruit{self.level_num}.png').convert_alpha()
-
-        # Carrega background baseado no nível
-        self.background_image = pygame.image.load(f'asset/Level{self.level_num}.png').convert()
-        self.background_image = pygame.transform.scale(self.background_image,
-                                                       (CELL_NUMBER * CELL_SIZE, CELL_NUMBER * CELL_SIZE))
+        self.fruit_image = pygame.image.load(f'asset/fruit{self.level_num}.png').convert_alpha()  # load fruit level
+        self.background_image = pygame.image.load(f'asset/Level{self.level_num}.png').convert() # load background level
+        self.background_image = pygame.transform.scale(
+            self.background_image,(CELL_NUMBER * CELL_SIZE, CELL_NUMBER * CELL_SIZE)
+        )
 
     def draw_score(self, screen, score, game_font):
         label_surface = game_font.render("Score: ", True, COLOR_GOLD)

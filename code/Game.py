@@ -1,7 +1,7 @@
 import pygame
 import sys
 from pygame.math import Vector2
-from code.Const import SCREEN_WIDTH, SCREEN_HEIGHT, CELL_SIZE, CELL_NUMBER, MENU_OPTION
+from code.Const import SCREEN_WIDTH, SCREEN_HEIGHT, CELL_SIZE, CELL_NUMBER
 from code.Fruit import Fruit
 from code.Level import Level
 from code.Menu import Menu
@@ -36,14 +36,14 @@ class Game:
 
     def run(self):
         while True:
-            score = Score(self.show_menu)
             option = self.show_menu()
             if option == "START":
                 self.game_active = True
                 self.reset_game()
                 self.game_loop()
             elif option == "SCORE":
-                score.show()
+                score_screen = Score(self.screen)
+                score_screen.show()
             elif option == "EXIT":
                 pygame.quit()
                 sys.exit()
@@ -117,5 +117,8 @@ class Game:
                 self.game_over()
 
     def game_over(self):
-        pygame.quit()
-        sys.exit()
+        score = (len(self.snake.body) - 3) * 10
+        # Mostrar tela de score ou voltar ao menu
+        self.game_active = False
+        score_screen = Score(self.screen)
+        score_screen.save(score)
