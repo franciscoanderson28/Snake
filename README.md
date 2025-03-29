@@ -1,4 +1,4 @@
-![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_left.png?raw=true"Snake_Ice")   Snake Ice   ![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_right.png)?raw=true "Snake_Ice")
+![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_left.png?raw=true"Snake_Ice")   Snake Ice   ![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_right.png?raw=true "Snake_Ice")
 ===============
  
 
