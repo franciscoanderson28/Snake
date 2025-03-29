@@ -1,4 +1,4 @@
-![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_left.png?raw=true"Snake_Ice")   Snake Ice   ![alt text](https://github.com/borinvini/MountainShooter/blob/main/asset/Player1.png?raw=true "Mountain Shooter")
+![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_left.png?raw=true"Snake_Ice")   Snake Ice   ![alt text](https://github.com/franciscoanderson28/Snake/blob/master/asset/head_right.png)?raw=true "Snake_Ice")
 ===============
  
 
