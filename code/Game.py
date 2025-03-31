@@ -69,7 +69,7 @@ class Game:
     def reset_game(self):
         self.snake = Snake()
         self.fruit = Fruit()
-        self.level = Level(level_num=1)  # PERFORMS RESET FOR LEVEL 1
+        self.level = Level(level_num=1)  # PERFORMS RESET FOR LEVEL1
         self.fruit_image = self.level.get_fruit_image()
         self.background_image = self.level.get_background_image()
 
@@ -120,7 +120,6 @@ class Game:
 
     def game_over(self):
         score = (len(self.snake.body) - 3) * 10
-        # Mostrar tela de score ou voltar ao menu
         self.game_active = False
         score_screen = Score(self.screen)
         score_screen.save(score)
