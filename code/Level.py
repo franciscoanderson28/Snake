@@ -1,5 +1,5 @@
 import pygame
-from code.Const import CELL_NUMBER, CELL_SIZE, COLOR_WHITE, COLOR_ORANGE, COLOR_GOLD
+from code.Const import CELL_NUMBER, CELL_SIZE, COLOR_WHITE, COLOR_GOLD
 
 
 class Level:

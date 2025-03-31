@@ -58,7 +58,7 @@ class Game:
                     self.update()
                 if event.type == pygame.KEYDOWN:
                     self.handle_input(event.key)
-                    if event.key == pygame.K_ESCAPE:  # Volta ao menu
+                    if event.key == pygame.K_ESCAPE:
                         self.game_active = False
                         return
                 self.screen.blit(self.background_image, (0, 0))
@@ -69,7 +69,9 @@ class Game:
     def reset_game(self):
         self.snake = Snake()
         self.fruit = Fruit()
-        self.level = Level()
+        self.level = Level(level_num=1)  # PERFORMS RESET FOR LEVEL 1
+        self.fruit_image = self.level.get_fruit_image()
+        self.background_image = self.level.get_background_image()
 
     def handle_input(self, key):
         if key == pygame.K_UP and self.snake.direction.y != 1:
